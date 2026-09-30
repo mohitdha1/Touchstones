@@ -1,0 +1,388 @@
+/* ==========================================================
+   North Star Bakery - Shared Stylesheet
+   Mobile-first: base styles are for small screens.
+   Media queries at the bottom add changes for larger screens.
+   ========================================================== */
+
+/* Fonts: Nunito (headings) + Source Sans 3 (body text) */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap");
+
+/* ---------- Design system: colors, fonts, spacing ---------- */
+:root {
+  /* Color palette (4 main colors, taken from the bakery logo) */
+  --brown: #684637;     /* logo brown: header, headings, buttons */
+  --tan: #c19e84;       /* logo wheat tan: borders and accents only */
+  --cream: #fbf6ee;     /* page background */
+  --charcoal: #2e2622;  /* body text */
+  --white: #ffffff;     /* card and form backgrounds */
+
+  /* Fonts (2 families) */
+  --font-heading: "Nunito", "Trebuchet MS", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+
+  --radius: 12px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;   /* 17px for comfortable reading */
+  line-height: 1.6;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Typography and hierarchy ---------- */
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--brown);
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-bottom: var(--space-xs);
+  border-bottom: 3px solid var(--tan);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+a {
+  color: var(--brown);
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  text-decoration-color: var(--tan);
+}
+
+/* Clear keyboard focus outline for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 3px;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0 0 var(--space-sm);
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+  display: flex;
+  flex-direction: column;       /* stacked on phones */
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--white);
+  border-bottom: 4px solid var(--brown);
+}
+
+header img {
+  width: 110px;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;              /* 2 x 2 grid of links on phones */
+  gap: var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  flex: 1 1 40%;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  height: 100%;
+  padding: 0.75rem var(--space-sm);   /* large tap targets */
+  background-color: var(--brown);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--charcoal);
+}
+
+/* Current page in the menu */
+nav a[aria-current="page"] {
+  background-color: var(--cream);
+  color: var(--brown);
+  box-shadow: inset 0 0 0 2px var(--brown);
+}
+
+/* ---------- Main content layout ---------- */
+main {
+  display: flex;
+  flex-direction: column;       /* single column on phones */
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-sm);
+}
+
+main > h1,
+main > p {
+  margin-bottom: 0;
+}
+
+/* Each section is a card */
+section {
+  background-color: var(--white);
+  border: 1px solid var(--tan);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+section > :last-child {
+  margin-bottom: 0;
+}
+
+section img,
+section video,
+section audio,
+figure {
+  margin: 0 0 var(--space-sm);
+  border-radius: var(--radius);
+}
+
+audio {
+  width: 100%;
+}
+
+/* ---------- Figure and caption ---------- */
+figure img {
+  margin-bottom: var(--space-xs);
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  padding-left: var(--space-xs);
+  border-left: 4px solid var(--tan);
+}
+
+/* ---------- Form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: var(--space-md);
+  border: 2px solid var(--tan);
+  border-radius: var(--radius);
+  background-color: var(--cream);
+}
+
+legend {
+  padding: 0 var(--space-xs);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--brown);
+}
+
+form p {
+  display: flex;
+  flex-direction: column;       /* label above its field */
+  gap: 0.35rem;
+  margin: 0;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--charcoal);
+  background-color: var(--white);
+  border: 2px solid var(--tan);
+  border-radius: 8px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  align-self: stretch;          /* full-width button on phones */
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--white);
+  background-color: var(--brown);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--charcoal);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: var(--space-md) var(--space-sm);
+  background-color: var(--brown);
+  color: var(--white);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ==========================================================
+   Tablet and up (768px+)
+   ========================================================== */
+@media (min-width: 768px) {
+  /* Logo on the left, menu on the right */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  nav {
+    width: auto;
+  }
+
+  /* Menu links sit in one row */
+  nav ul {
+    justify-content: flex-end;
+  }
+
+  nav li {
+    flex: 0 0 auto;             /* links size to their text */
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  main {
+    padding: var(--space-lg);
+  }
+
+  /* Name and email side by side */
+  fieldset:first-of-type {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  fieldset:first-of-type p {
+    flex: 1 1 250px;
+  }
+
+  button {
+    align-self: flex-start;     /* button shrinks to fit text */
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+  }
+}
+
+/* ==========================================================
+   Desktop (1024px+)
+   ========================================================== */
+@media (min-width: 1024px) {
+  /* Sections become a two-column card layout */
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  main > h1,
+  main > p {
+    flex-basis: 100%;           /* title and intro stay full width */
+  }
+
+  section {
+    flex: 1 1 calc(50% - var(--space-md));
+  }
+
+  /* The form section needs the full width */
+  section:has(form) {
+    flex-basis: 100%;
+  }
+}
