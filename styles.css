@@ -386,3 +386,192 @@ footer p {
     flex-basis: 100%;
   }
 }
+
+/* ==========================================================
+   Touchstone 4: Interactive pre-order list and form feedback
+   ========================================================== */
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--brown);
+  margin: 0 0 var(--space-xs);
+}
+
+/* Category filter buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--brown);
+  background-color: var(--cream);
+  border: 2px solid var(--brown);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter-button[aria-pressed="true"] {
+  color: var(--white);
+  background-color: var(--brown);
+}
+
+/* Product rows with an Add button */
+.product-options,
+.preorder-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+}
+
+.product-option,
+.preorder-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.6rem var(--space-sm);
+  margin: 0;
+  background-color: var(--cream);
+  border: 1px solid var(--tan);
+  border-radius: 8px;
+}
+
+.product-name,
+.preorder-list li span {
+  flex: 1;
+  font-weight: 600;
+}
+
+.product-price {
+  color: var(--charcoal);
+}
+
+.add-button,
+.remove-button,
+.secondary-button {
+  padding: 0.45rem 1rem;
+  font-size: 0.95rem;
+}
+
+.remove-button,
+.secondary-button {
+  color: var(--brown);
+  background-color: var(--white);
+  box-shadow: inset 0 0 0 2px var(--brown);
+}
+
+.remove-button:hover,
+.remove-button:focus,
+.secondary-button:hover,
+.secondary-button:focus {
+  color: var(--white);
+}
+
+/* Saved list panel */
+.preorder-summary {
+  padding: var(--space-md);
+  background-color: var(--white);
+  border: 2px dashed var(--tan);
+  border-radius: var(--radius);
+}
+
+.list-total {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--brown);
+}
+
+.list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.list-actions[hidden] {
+  display: none;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  color: var(--white);
+  background-color: var(--brown);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus {
+  background-color: var(--charcoal);
+}
+
+/* Form feedback */
+.error-message {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #a12d1f; /* dark red for errors, 6.9:1 on white */
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.error-message::before {
+  content: "\26A0  "; /* warning sign so the error is not shown by color alone */
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #a12d1f;
+  background-color: #fff5f3;
+}
+
+.form-message {
+  padding: var(--space-sm);
+  border-radius: 8px;
+  font-weight: 600;
+  border-left: 6px solid var(--brown);
+  background-color: var(--cream);
+}
+
+.form-message.error {
+  border-left-color: #a12d1f;
+  color: #a12d1f;
+}
+
+.form-message.success {
+  border-left-color: #2f6b3a;
+  color: #2f6b3a;
+}
+
+@media (min-width: 768px) {
+  /* Product options become a two-column grid of rows */
+  .product-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .product-option {
+    flex: 1 1 calc(50% - var(--space-xs));
+  }
+}
+
+@media (min-width: 1024px) {
+  .preorder-builder {
+    flex-basis: 100%;
+  }
+}

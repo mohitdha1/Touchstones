@@ -6,6 +6,7 @@
   <meta name="description" content="Browse fresh bread, pastries, and custom pre-order items from North Star Bakery.">
   <title>North Star Bakery | Products</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -56,6 +57,26 @@
         <li>Seasonal Fruit Hand Pies</li>
         <li>Chocolate Chip Cookies</li>
       </ul>
+    </section>
+
+    <section class="preorder-builder" aria-labelledby="builder-heading">
+      <h2 id="builder-heading">Build Your Pre-Order List</h2>
+      <p>Pick a category, add the items you want, and we will remember your list. When you are ready, your list is filled in on the pre-order form for you.</p>
+      <div class="filter-buttons" id="filter-buttons" role="group" aria-label="Filter products by category"></div>
+      <ul class="product-options" id="product-options"></ul>
+      <div class="preorder-summary">
+        <h3>Your Pre-Order List</h3>
+        <p id="list-status" aria-live="polite">Your list is empty. Add items above to get started.</p>
+        <ul class="preorder-list" id="preorder-list"></ul>
+        <p class="list-total" id="list-total"></p>
+        <div class="list-actions" id="list-actions" hidden>
+          <a class="button-link" href="contact.html">Continue to Pre-Order Form</a>
+          <button type="button" class="secondary-button" id="clear-list">Clear List</button>
+        </div>
+      </div>
+      <noscript>
+        <p>Turn on JavaScript to build a pre-order list, or go straight to the <a href="contact.html">pre-order form</a>.</p>
+      </noscript>
     </section>
 
     <section>
