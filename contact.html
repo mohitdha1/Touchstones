@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact North Star Bakery or submit a pre-order request for pickup.">
+  <title>North Star Bakery | Contact and Pre-Orders</title>
+</head>
+<body>
+  <header>
+    <img src="bakery-logo.png" alt="North Star Bakery logo" width="150">
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">About Our Bakery</a></li>
+        <li><a href="contact.html" aria-current="page">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact and Pre-Orders</h1>
+    <p>Have a question or want to reserve baked goods for pickup? Fill out the form below and we will reply within one business day to confirm your request.</p>
+
+    <section>
+      <h2>Pre-Order and Inquiry Form</h2>
+      <p>Fields marked with an asterisk (*) are required.</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your Contact Information</legend>
+          <p>
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60">
+          </p>
+          <p>
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@example.com">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order Details</legend>
+          <p>
+            <label for="pickup-date">Pickup date *</label>
+            <input type="date" id="pickup-date" name="pickup-date" required min="2026-10-01">
+          </p>
+          <p>
+            <label for="request-type">Request type *</label>
+            <select id="request-type" name="request-type" required>
+              <option value="">Choose a request type</option>
+              <option value="pre-order">Pre-order for pickup</option>
+              <option value="event">Event or party order</option>
+              <option value="custom-cake">Custom cake</option>
+              <option value="question">General question</option>
+            </select>
+          </p>
+          <p>
+            <label for="item-details">Item details *</label>
+            <textarea id="item-details" name="item-details" rows="5" cols="40" required minlength="10" maxlength="500" placeholder="Example: 2 signature loaves and 1 dozen dinner rolls"></textarea>
+          </p>
+          <p>
+            <label for="allergy-notes">Allergy notes (optional)</label>
+            <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="40" maxlength="300" placeholder="Example: nut allergy, no dairy"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Send My Request</button>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Visit or Call</h2>
+      <p>Hours: Tuesday through Sunday, 6:30 a.m. to 3:00 p.m. Closed Mondays.</p>
+      <p>Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>North Star Bakery &middot; Open Tuesday through Sunday, 6:30 a.m. to 3:00 p.m.</p>
+    <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
